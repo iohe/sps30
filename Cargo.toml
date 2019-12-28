@@ -1,0 +1,39 @@
+[package]
+name = "sps30"
+authors = ["Ioan Herisanu <ioan.herisanu.dev@gmail.com>"]
+categories = ["no-std"]
+description = "Sensirion SPS30 Particulate Matter Sensor"
+documentation = "https://docs.rs/sps30"
+homepage = "https://github.com/iohe/sps30"
+keywords = ["Sensirion", "SPS30"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/iohe/sps30.git"
+version = "0.1.0"
+edition = "2018"
+
+[badges]
+travis-ci = { repository = "iohe/sps30", branch = "master" }
+coveralls = { repository = "iohe/sps30", branch = "master", service = "github" }
+maintenance = { status = "actively-developed" }
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sensirion-hdlc = "0.1.0"
+embedded-hal = "0.2.3"
+nb = "0.1.1"
+ieee754 = "0.2"
+
+[dependencies.arrayvec]
+version = "0.5.1"
+default-features = false # do not include the default features, and optionally
+                         # cherry-pick individual features
+features = []
+
+[dev-dependencies]
+embedded-hal = { version = "0.2.3", features = ["unproven"] }
+linux-embedded-hal = "0.3.0"
+rppal = { version = "0.11.3", features = ["hal"] }
+
